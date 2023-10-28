@@ -7,12 +7,12 @@ public class Unit {
     protected float ParryChance = 0.1F;
 
     public Unit(String name) {
-        ++Game.CountOfPlayers;
+        Game.CountOfPlayers++;
         this.name = name;
     }
 
     public Unit() {
-        ++Game.CountOfPlayers;
+        Game.CountOfPlayers++;
     }
 
     public int getHealth() {
