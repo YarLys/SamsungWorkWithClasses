@@ -1,3 +1,5 @@
+import java.util.Scanner;
+
 public class Scenary {
     public static int state = 0;
     public static int round = 0;
@@ -14,15 +16,29 @@ public class Scenary {
     public static void printChooseConfig() {
         System.out.println(Util.chooseConfig);
     }
-    public static void gameCycle() {
+    public static String chooseCfg() {
+        printChooseConfig();
+        Scanner in = new Scanner(System.in);
+        return in.nextLine();
+    }
+    public static String[] prepCycle() {
+        Scanner in = new Scanner(System.in);
+        state %= 2;
         switch (state) {
             case 0:
-
-                break;
+                printHello();
+                state++;
+                String name[] = new String[1];
+                name[0] = in.nextLine();
+                return name;
             case 1:
-                break;
-            case 2:
-                break;
+                printChooseUnits();
+                String units[] = in.nextLine().split(" ");
+                state++;
+                return units;
+            default:
+                String def[] = new String[1];
+                return def;
         }
     }
 }
