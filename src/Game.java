@@ -3,7 +3,7 @@ import java.util.Scanner;
 public class Game {
     public static final int MAX_PLAYERS = 4;
     public static int CountOfPlayers = 0;
-    protected Player players[] = new Player[MAX_PLAYERS];
+    public static Player players[] = new Player[MAX_PLAYERS];
     protected int config = 2;
     Scanner in = new Scanner(System.in);
     public Game() {
@@ -36,6 +36,7 @@ public class Game {
     }
 
     private void run() {
+        // if config == 2 // Manual
 
     }
 }

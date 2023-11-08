@@ -1,5 +1,3 @@
-import jdk.jshell.Snippet;
-
 public class Player {
     protected String name = "Default";
     protected Unit units[];
