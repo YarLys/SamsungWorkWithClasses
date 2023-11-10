@@ -1,13 +1,10 @@
 public class Wizard extends Unit {
     protected int mana = 100;
 
-    public Wizard(String name) {
-        super(name);
+    public Wizard() {
         this.power = 25;
         this.defence = 80;
-    }
-
-    public Wizard() {
+        this.type = "Wizard";
     }
 
     public void attack(Unit unit) {
@@ -15,10 +12,15 @@ public class Wizard extends Unit {
             this.mana -= 10;
             super.attack(unit);
         }
-
     }
 
+    @Override
     public String toString() {
-        return "Wizard{mana=" + this.mana + ", health=" + this.health + ", defence=" + this.defence + "}";
+        return "Wizard{" +
+                "mana=" + mana +
+                ", health=" + health +
+                ", defence=" + defence +
+                ", power=" + power +
+                '}';
     }
 }

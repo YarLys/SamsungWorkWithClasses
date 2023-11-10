@@ -1,10 +1,8 @@
+import java.sql.SQLOutput;
 import java.util.Scanner;
 
 public class Scenary {
     public static int prep_state = 0;
-    public static int game_state = 0;
-    public static int round = 0;
-    public static int player_num = 0;
     public static void printNewGame() {
         System.out.println(Util.newGame);
     }
@@ -17,8 +15,11 @@ public class Scenary {
     public static void printChooseConfig() {
         System.out.println(Util.chooseConfig);
     }
-    public static void printPlayer(Player player) {
-        System.out.println(Util.round(round, player.name));
+    public static void printRound(int round, String name) {
+        System.out.println(("Раунд " + round + ". Ходит " + name));
+    }
+    public static void printGameOver() {
+        System.out.print(Util.gameOver);
     }
     public static String chooseCfg() {
         printChooseConfig();
@@ -46,18 +47,21 @@ public class Scenary {
         }
     }
 
-    public static void gameCycle() {
+    public static int chooseUnit() {
+        System.out.print(Util.chooseHero);
         Scanner in = new Scanner(System.in);
-        switch (game_state) {
-            case 0:
-                printPlayer(Game.players[player_num]);
-                break;
-            case 1:
-                break;
-            case 2:
-                break;
-        }
-        player_num++;
-        player_num %= 2;
+        return (in.nextInt());
+    }
+
+    public static int chooseOpponent() {
+        System.out.print(Util.chooseOpponent);
+        Scanner in = new Scanner(System.in);
+        return (in.nextInt());
+    }
+
+    public static int chooseAttack() {
+        System.out.print(Util.chooseAttack);
+        Scanner in = new Scanner(System.in);
+        return (in.nextInt());
     }
 }

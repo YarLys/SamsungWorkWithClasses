@@ -1,11 +1,8 @@
 public class Knight extends Unit {
-    public Knight(String name) {
-        super(name);
+    public Knight() {
         this.power = 15;
         this.defence = 120;
-    }
-    public Knight() {
-
+        this.type = "Knight";
     }
 
     @Override

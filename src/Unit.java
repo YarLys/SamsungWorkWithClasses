@@ -3,16 +3,15 @@ public class Unit {
     protected int health = 100;
     protected int defence = 100;
     protected int power = 10;
+    protected String type = "def";
     protected float CricicalChance = 0.1F;
     protected float ParryChance = 0.1F;
 
     public Unit(String name) {
-        Game.CountOfPlayers++;
         this.name = name;
     }
 
     public Unit() {
-        Game.CountOfPlayers++;
     }
 
     public int getHealth() {
@@ -60,7 +59,8 @@ public class Unit {
     }
 
     public void getDamage(int damage) {
-        this.health -= damage;
+        if (this.health > 0) this.health -= (damage - (int)(this.defence * 0.05));
+        if (this.defence > 0) this.defence -= 5;
     }
 
     public String toString() {
